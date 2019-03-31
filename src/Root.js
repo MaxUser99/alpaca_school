@@ -1,14 +1,13 @@
 import React from "react";
-import {BrowserRouter as Router, Route} from "react-router-dom";
 import {Provider} from "react-redux";
-import App from "./App";
 import store from './store/store';
+import {Header, Main,  Footer} from "layout";
 
 const Root = () => (
   <Provider store={store}>
-    <Router>
-      <Route path='/' component={App} />
-    </Router>
+    <Header/>
+    <Main/>
+    <Footer/>
   </Provider>
 );
 

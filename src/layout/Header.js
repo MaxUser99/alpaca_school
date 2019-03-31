@@ -1,9 +1,12 @@
 import React from "react";
+import {Layout} from "antd";
 
-const Header = () => (
-  <div>
-    this is header
-  </div>
-);
+const Header = () => {
+  const {Header} = Layout;
+  return (
+    <Header>
+    </Header>
+  )
+};
 
 export default Header;

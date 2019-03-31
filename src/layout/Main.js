@@ -1,13 +1,14 @@
 import React from "react";
-import {BrowserRouter as Router, Route} from "react-router-dom";
-import {MainPage} from "pages";
+import {BrowserRouter as Router, Route, Switch} from "react-router-dom";
+import {MainPage, CourseList} from "pages";
 
 const Main = () => (
-  <div>
-    <Router>
-      <Route path='/' component={MainPage} />
-    </Router>
-  </div>
+  <Router>
+    <Switch>
+      <Route path='/courses/' component={CourseList}/>
+      <Route path='/' component={MainPage}/>
+    </Switch>
+  </Router>
 );
 
 export default Main;

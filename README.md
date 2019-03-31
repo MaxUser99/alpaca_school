@@ -66,3 +66,27 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/de
 ### `npm run build` fails to minify
 
 This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+
+## Code Style
+1. All code goes in src/
+2. src/store folder stands for redux and sagas
+3. src/layout stands for simply page layout,
+   and src/pages is for content of the above pages
+   
+    3.1 every component in src/pages/ must be wrapped in Layout.Content tag
+    ```jsx harmony
+     import {Layout} from "antd";
+         ...
+        <Layout.Content>...here comes your code</Layout.Content>
+     ```
+4. All reusable components must be in src/components folder
+5. index.js files in folders are used for comfy imports like that
+```jsx harmony
+import {MainPage} from "pages";
+```
+instead of 
+```jsx harmony
+import {MainPage} from "../alpaca/src/pages"
+```
+, so after creating every new component you must add corresponding
+export to relative index.js file 

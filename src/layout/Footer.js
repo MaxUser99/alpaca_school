@@ -1,9 +1,12 @@
 import React from "react";
+import {Layout} from "antd";
 
-const Footer = () => (
-  <div>
+const Footer = () => {
+  const {Footer} = Layout;
+  return(
+  <Footer>
     this is Footer
-  </div>
-);
+  </Footer>
+)};
 
 export default Footer;

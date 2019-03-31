@@ -20,7 +20,7 @@ class TestComponent extends React.Component{
   };
 
   render() {
-    const {msg} = this.props;
+    const {msg, errorMessage} = this.props;
     const {message} = this.state;
     return (
       <div>
@@ -33,6 +33,7 @@ class TestComponent extends React.Component{
           name='message'
           type="text"/>
         <button onClick={this.saveMsg}>Save message</button>
+        <p>Error msg: <span style={{color: 'red'}}>{errorMessage}</span></p>
       </div>
     );
   }
@@ -40,13 +41,14 @@ class TestComponent extends React.Component{
 
 const mapStateToProps = state => (
   {
-    msg: state.msg
+    msg: state.msg,
+    errorMessage: state.errorMsg
   }
 );
 
 const mapDispatchToProps = dispatch => (
   {
-    setMessage: (msg) => dispatch(test(msg))
+    setMessage: (msg) => dispatch(test(msg)),
   }
 );
 

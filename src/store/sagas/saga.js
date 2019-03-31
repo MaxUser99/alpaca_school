@@ -1,10 +1,13 @@
-import {takeEvery, put, call} from "redux-saga/effects";
-import {actionType} from "../appStore/actions";
+import {takeEvery, takeLatest, put, call, delay} from "redux-saga/effects";
+import {actionType, printError} from "../appStore/actions";
 
 function* testSaga({payload : newMessage}){
   console.log("this is saga, ", newMessage);
+  yield put(printError(newMessage));
+  yield delay(1000);
+  yield put(printError(""));
 }
 
 export function* appSaga(){
-  yield takeEvery(actionType.TEST, testSaga);
+  yield takeLatest(actionType.TEST, testSaga);
 }
